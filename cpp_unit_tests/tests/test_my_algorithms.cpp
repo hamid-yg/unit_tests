@@ -6,7 +6,6 @@
 */
 
 #include "test_redirect.hpp"
-#include "../MyAlgorithms.hpp"
 
 static void mult2(int& i)
 {

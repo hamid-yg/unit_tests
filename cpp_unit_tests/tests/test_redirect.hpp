@@ -5,8 +5,8 @@
 ** test_redirect
 */
 
-#ifndef TEST_REDIRECT_H
-#define TEST_REDIRECT_H
+#ifndef TEST_REDIRECT_HPP
+#define TEST_REDIRECT_HPP
 
 #include <ostream>
 #include <iostream>
@@ -14,6 +14,8 @@
 #include <criterion/redirect.h>
 #include <list>
 #include <vector>
+#include "../include/cpp.hpp"
+#include "../include/MyAlgorithms.hpp"
 
 void redirect_stdout(void);
 
@@ -39,4 +41,4 @@ class OSRedirector {
         }
 };
 
-#endif /* !TEST_REDIRECT_H */
+#endif /* !TEST_REDIRECT_HPP */
