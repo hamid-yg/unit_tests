@@ -5,6 +5,8 @@
 ** number of char
 */
 
+#include "../include/c.h"
+
 int my_strlen(const char *str)
 {
     int i = 0;

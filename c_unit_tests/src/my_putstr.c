@@ -5,7 +5,7 @@
 ** display a char*
 */
 
-#include <unistd.h>
+#include "../include/c.h"
 
 void my_putstr(const char *str)
 {

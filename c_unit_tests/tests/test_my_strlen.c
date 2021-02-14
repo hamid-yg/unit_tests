@@ -9,8 +9,7 @@
 #include <string.h>
 #include <signal.h>
 #include <stdio.h>
-
-int my_strlen(const char *str);
+#include "test_redirect.h"
 
 void setup(void)
 {

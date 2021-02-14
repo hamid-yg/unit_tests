@@ -10,6 +10,7 @@
 
 #include <criterion/criterion.h>
 #include <criterion/redirect.h>
+#include "../include/c.h"
 
 void redirect_stdout(void);
 

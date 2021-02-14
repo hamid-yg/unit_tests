@@ -7,8 +7,6 @@
 
 #include "test_redirect.h"
 
-void my_putstr(const char *str);
-
 Test(putstr, test_my_putstr, .init=redirect_stdout)
 {
     my_putstr("hello");
