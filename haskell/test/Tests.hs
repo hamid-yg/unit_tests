@@ -1,6 +1,6 @@
 --
 -- EPITECH PROJECT, 2021
--- Haskell Tests
+-- unit_tests
 -- File description:
 -- Tests
 --

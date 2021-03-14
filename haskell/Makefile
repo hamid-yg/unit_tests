@@ -1,26 +1,53 @@
 ##
 ## EPITECH PROJECT, 2021
-## day01
+## unit_tests
 ## File description:
 ## Makefile
 ##
 
-SRCS	=	$(shell find . -name "*.hs")
+#COLOR
+RED				=	\e[31m
+GREEN			=	\e[32m
+YELLOW			=	\e[33m
+DEFAULT			=	\e[0m
+BOLD			=	\e[1m
 
-TESTS	=	$(shell find ./tests -name '*.hs')
+#TEXT
+COMPILE			=	$$'$(BOLD)$(GREEN)[ Compiled the project ! ]\t$(DEFAULT)'
+RE_COMPILE		=	$$'$(BOLD)$(GREEN)[ Recompiled the project ! ]\t$(DEFAULT)'
+CLEAN			=	$$'$(BOLD)$(RED)[ Removed useless files... ]\t$(DEFAULT)'
+FCLEAN			=	$$'$(BOLD)$(RED)[ Removed binary... ]\t$(DEFAULT)'
+TESTS_COMPILE	=	$$'$(BOLD)$(YELLOW)[ Excecuted Units tests... ]\t$(DEFAULT)'
 
-USELESS		=	$(shell find ./tests -type f -name "*~" -o -name "*.o" -o -name "*.hi" -o -name "*.dyn_hi" -o -name "*.dyn_o" -o -name "\#*\#")
+SRCS	=	$(shell find ./app ./src -name "*.hs")
 
-tests_run:
-	@ghc --make -o unit_tests $(TESTS)
-	./unit_tests
+TESTS	=	$(shell find ./test -name '*.hs')
+
+USELESS		=	$(shell find ./test -type f -name "*~" -o -name "*.o" -o -name "*.hi" -o -name "*.dyn_hi" -o -name "*.dyn_o" -o -name "\#*\#")
+
+BIN_DIR		=	$(shell stack path --local-install-root)
+
+UNIT_TESTS	=	unit_tests
+
+NAME		=	binary
+
+all:	$(SRCS)
+	@stack build
+	@echo $(COMPILE)
+
+tests_run:	$(TESTS)
+	@stack test
 
 clean:
-	@rm -f $(USELESS)
+	@stack clean --full
+	@rm -rf $(USELESS)
+	@echo $(CLEAN)
 
 fclean: clean
-	@rm -f unit_tests
+	@rm -f $(UNIT_TESTS) $(NAME)
+	@echo $(FCLEAN)
 
-re: fclean tests_run
+re: fclean all
+	@echo $(RE_COMPILE)
 
-.PHONY: clean fclean re
+.PHONY: all tests_run clean fclean re
