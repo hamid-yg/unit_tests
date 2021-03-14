@@ -5,8 +5,7 @@
 ** test_redirect
 */
 
-#include <criterion/criterion.h>
-#include <criterion/redirect.h>
+#include "test_redirect.hpp"
 
 void redirect_stdout(void)
 {

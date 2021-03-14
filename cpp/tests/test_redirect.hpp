@@ -15,7 +15,6 @@
 #include <list>
 #include <vector>
 #include "../include/cpp.hpp"
-#include "../include/MyAlgorithms.hpp"
 
 void redirect_stdout(void);
 
