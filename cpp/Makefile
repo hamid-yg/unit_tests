@@ -1,6 +1,6 @@
 ##
 ## EPITECH PROJECT, 2021
-## day01
+## cpp
 ## File description:
 ## Makefile
 ##
